@@ -10,7 +10,7 @@
                     <button class="nav-btn">Get Start</button>
                 </div>
                 <div class="cards">
-                    <div class="card">
+                    <div class="card" :class="{'back-class':!slide.slide_status}">
                         <div class="bg-img">
                             <img src="../../assets/Main/card-4.png" alt="">
                             <div class="hot">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <!-- ========== Card-2 =========== -->
-                    <div class="card back-class">
+                    <div class="card" :class="{'back-class':slide.slide_status}">
                         <div class="bg-img">
                             <img src="../../assets/Main/card-6.png" alt="">
                             <div class="hot">
@@ -80,7 +80,28 @@
     </div>
 </template>
 <script>
-export default {};
+import { reactive , onMounted} from 'vue';
+export default {
+
+    setup() {
+        const slide = reactive({
+            slide_status: false,
+            item:1
+        })
+
+
+        onMounted(() => {
+            setInterval(() => {
+                slide.slide_status = !slide.slide_status;
+            }, 5000);
+        })
+
+
+        return {
+            slide
+        }
+    }
+};
 </script>
 <style lang="scss">
 @import "../../sass/main";
@@ -137,6 +158,9 @@ export default {};
     @include flex(center, flex-start, row, 0);
     @include media(xl) {
       overflow: hidden;
+    }
+    &::-webkit-scrollbar{
+      width: 0;
     }
     height: 150px;
     overflow: auto;

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-//============== Variables--->
 $main-color: #1e50ff;
 $dark-color: #02050e;
 $light-color: #adb9c7;
@@ -15,27 +13,19 @@ $main-font: 14px;
     @media screen and (min-width: 280px) and (max-width: 676px) {
       @content;
     }
-  }
-
-  @else if($data==sm) {
+  } @else if($data==sm) {
     @media screen and (min-width: 678px) and (max-width: 991px) {
       @content;
     }
-  }
-
-  @else if($data==md) {
+  } @else if($data==md) {
     @media screen and (min-width: 992px) and (max-width: 1200px) {
       @content;
     }
-  }
-
-  @else if($data==mdsmem) {
+  } @else if($data==mdsmem) {
     @media screen and (min-width: 200px) and (max-width: 991px) {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @media screen and (min-width: 1210px) {
       @content;
     }
@@ -57,7 +47,7 @@ $main-font: 14px;
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Chillax-Variable";
   background-repeat: no-repeat;
   z-index: 1;
 }
@@ -375,7 +365,8 @@ a,
   }
 
   to {
-    box-shadow: inset 100px 0px 100px 10px rgba($color: $white-color, $alpha: 0.3);
+    box-shadow: inset 100px 0px 100px 10px
+      rgba($color: $white-color, $alpha: 0.3);
   }
 }
 
